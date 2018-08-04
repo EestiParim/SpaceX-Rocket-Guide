@@ -6,12 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 
-class RocketListAdapter(val userList: ArrayList<Rocket>): RecyclerView.Adapter<RocketListAdapter.ViewHolder>() {
+class RocketListAdapter(val rocketList: List<RocketDataEntry>?): RecyclerView.Adapter<RocketListAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.txtName?.text = userList[position].name
-        holder.txtTitle?.text = userList[position].engineCount
-        holder.txtCountry?.text = userList[position].country
+        val rocketDataEntry = rocketList?.get(position)
+        holder.txtName?.text = rocketDataEntry?.name
+        holder.txtTitle?.text = rocketDataEntry?.boosters.toString()
+        holder.txtCountry?.text = rocketDataEntry?.country
 
     }
 
@@ -21,7 +22,7 @@ class RocketListAdapter(val userList: ArrayList<Rocket>): RecyclerView.Adapter<R
     }
 
     override fun getItemCount(): Int {
-        return userList.size
+        return rocketList!!.size
     }
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
