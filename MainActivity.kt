@@ -15,8 +15,8 @@ class MainActivity : AppCompatActivity() {
         val rv = findViewById<RecyclerView>(R.id.recycle_view)
         rv.layoutManager = LinearLayoutManager(this,LinearLayout.VERTICAL, false);
         val rockets = ArrayList<Rocket>()
-        rockets.add(Rocket("Suur Rakett","Musk"))
-        rockets.add(Rocket("Väike Rakett","USSR"))
+        rockets.add(Rocket("SpaceX First","22 Engines", "Russia"))
+        rockets.add(Rocket("Big Large Falcon","5 Engines", "Ireland Republic"))
 
         var adapter = RocketListAdapter(rockets)
         rv.adapter = adapter
