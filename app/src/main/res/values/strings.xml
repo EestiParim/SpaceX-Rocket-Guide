@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">SpaceXApp</string>
+    <string name="select_options">Select Options:</string>
+    <string name="inactive">inactive</string>
+    <string name="active">active</string>
 </resources>
