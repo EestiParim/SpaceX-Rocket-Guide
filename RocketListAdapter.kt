@@ -11,7 +11,7 @@ class RocketListAdapter(val rocketList: List<RocketDataEntry>?): RecyclerView.Ad
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val rocketDataEntry = rocketList?.get(position)
         holder.txtName?.text = rocketDataEntry?.name
-        holder.txtTitle?.text = rocketDataEntry?.boosters.toString()
+        holder.txtTitle?.text = rocketDataEntry?.engines?.number.toString() + " engines"
         holder.txtCountry?.text = rocketDataEntry?.country
 
     }
